@@ -9,22 +9,23 @@ Authenticity Declaration :
 have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
 /////////////////////////////////////////////////////////////////////////*/
 
-#ifndef SDDS_LABEL_H
-#define SDDS_LABEL_H
+#ifndef SDDS_MAKER_H
+#define SDDS_MAKER_H
 #include <iostream>
+#include "Label.h"
 
 namespace sdds {
-   class Label {
-      char m_frame[9];
-      char* m_content;
-      void setToDefault();
+   class LabelMaker {
+      Label* m_labels;
+      int m_noOfLabels;
    public:
-      Label();
-      Label(const char* frameArg);
-      Label(const char* frameArg, const char* content);
-      ~Label();
-      std::ostream& printLabel()const;
-      void readLabel();
+      LabelMaker();
+      LabelMaker(int noOfLabels);
+      void readLabels();
+      void printLabels()const;
+      void setEmpty();
+      ~LabelMaker();
    };
 }
-#endif // SDDS_LABEL_H
+
+#endif
