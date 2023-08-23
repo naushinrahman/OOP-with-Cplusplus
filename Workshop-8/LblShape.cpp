@@ -21,7 +21,7 @@ namespace sdds {
    LblShape::~LblShape() {
       delete[] m_label;
    }
-   void LblShape::getSpecs(std::istream& is) {
+   void LblShape::getSpecs(istream& is) {
       if (m_label != nullptr) {
          delete[] m_label;
       }
